@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Students</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Students List 🎓</h1>
+
+    {% if students %}
+    {% for student in students %}
+    <div class="card">
+        <h3>{{ student.name }}</h3>
+        <p>Email: {{ student.email }}</p>
+        <p>Phone: {{ student.phone }}</p>
+        <p>Course: {{ student.course }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p style="text-align:center; color: gray;">
+        No students found 😕
+    </p>
+    {% endif %}
+</body>
+
+</html>
